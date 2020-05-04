@@ -20,7 +20,7 @@ tab %>% ggplot(aes(population/(10^6),electoral_votes,label = abb)) +
   geom_smooth(method = "lm",se = FALSE)
 
 # From the murders table, create a subset with first 6 rows and columns state and population.
-tab1 <- murders %>% slice(1:6) %>% select(state,population)
+tab1 <- murders %>% slice(1:6) %>% dplyr::select(state,population)
 tab1
 # From the results_us_election_2016 table, create a subset with first 3, 5th, 7th and 8th rows. and columns state and electoral_votes
 tab2 <- results_us_election_2016 %>% slice(c(1:3,5,7:8)) %>% select(state,electoral_votes)
